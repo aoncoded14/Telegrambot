@@ -2,9 +2,15 @@ from typing import Final
 
 from telegram import Update
 
+from dotenv import load_dotenv
+
+import os
+
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes 
 
-TOKEN: Final = '6824111776:AAHf_D1BbmUCdYehBu-o7VvVdsryzH72sVY'
+load_dotenv()
+
+TOKEN: Final = os.getenv('TOKEN')
 
 BOT_USERNAME: Final = '@aonchat_bot'
 
