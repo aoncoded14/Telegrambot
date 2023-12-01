@@ -4,9 +4,9 @@ from telegram import Update
 
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes 
 
-TOKEN: Final = '6824111776:AAHf_D1BbmUCdYehBu-o7VvVdsryzH72sVY'
+TOKEN: Final = 'INSERT TOKEN ID HERE'
 
-BOT_USERNAME: Final = '@aonchat_bot'
+BOT_USERNAME: Final = 'name of chatbot'
 
 #Commands
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
