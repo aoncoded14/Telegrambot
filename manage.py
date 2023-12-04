@@ -8,11 +8,15 @@ import os
 
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes 
 
+from langchain.document_loaders import TextLoader
+
 load_dotenv()
 
 TOKEN: Final = os.getenv('TOKEN')
 
 BOT_USERNAME: Final = '@aonchat_bot'
+
+DATABASE = None
 
 #Commands
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -23,6 +27,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('This is  a custom command')
+
+#Incorporating Langchain
+async def load(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    loader = TextLoader('/home/aonlinxed/projects/bot/state-of-the-union.txt') #Sampletext
 
 #Responses using if statements
 def handle_response(text: str) -> str:
